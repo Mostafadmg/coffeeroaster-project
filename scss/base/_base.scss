@@ -1,0 +1,9 @@
+// Base styles
+body {
+  padding: $spacing-300;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include tablet {
+    padding: $spacing-500 $spacing-1000;
+  }
+}

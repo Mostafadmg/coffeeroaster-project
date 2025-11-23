@@ -1,0 +1,106 @@
+.why-us {
+  padding-top: 5rem;
+  margin-bottom: 20rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    background-color: $neutral-900;
+    padding: $spacing-800 $spacing-200;
+    border-radius: 8px;
+    height: 36.0625rem;
+
+    // margin-bottom: 3rem;
+  }
+
+  &__text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-400;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__subtitle {
+    opacity: 0.8;
+    max-width: 33rem;
+  }
+
+  //   Benefits onwards
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-300;
+    width: 85%;
+
+    margin: -12rem auto;
+
+    @include tablet {
+      margin: -17rem auto;
+    }
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+}
+
+.why-us__benefit {
+  padding: $spacing-300 $spacing-250;
+  background-color: $teal-600;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-300;
+  min-height: 18rem;
+
+  @include tablet {
+    flex-direction: row;
+    min-width: 35rem;
+    min-height: 11.75rem;
+    padding: $spacing-500 $spacing-600;
+  }
+
+  @include desktop {
+    min-height: 22rem;
+    min-width: 21rem;
+    flex-direction: column;
+  }
+
+  &-icon {
+    height: 4.5rem;
+    flex-shrink: 0;
+
+    & img {
+      height: 100%;
+      flex-shrink: 0;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-150;
+
+    @include tablet {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    @include desktop {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &-desc {
+    color: $neutral-50;
+    opacity: 0.8;
+  }
+}

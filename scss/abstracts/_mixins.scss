@@ -1,0 +1,46 @@
+// Mixins
+$breakpoints: (
+  mobile: 600px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1440px,
+  large-desktop: 1536px,
+);
+
+@mixin respond($device) {
+  $size: map-get($breakpoints, $device);
+
+  @if $size == null {
+    @error "Unknown breakpoint `#{$device}`. Check your \$breakpoints map!";
+  }
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include respond(mobile) {
+    @content;
+  }
+}
+@mixin tablet {
+  @include respond(tablet) {
+    @content;
+  }
+}
+@mixin laptop {
+  @include respond(laptop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @include respond(desktop) {
+    @content;
+  }
+}
+@mixin large-desktop {
+  @include respond(large-desktop) {
+    @content;
+  }
+}

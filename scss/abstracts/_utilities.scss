@@ -1,0 +1,76 @@
+$typography: (
+  text-72: (
+    size: $font-72,
+    // 4.5rem
+    line: $line-100,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-48: (
+    size: $font-48,
+    // 3rem
+    line: $line-100,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-40: (
+    size: $font-40,
+    // 2.5rem
+    line: $line-120,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-32: (
+    size: $font-32,
+    // 2rem
+    line: $line-114,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-24: (
+    size: $font-24,
+    // 1.5rem
+    line: $line-150,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-18: (
+    size: $font-18,
+    // 1.125rem
+    line: $line-140,
+    track: $tracking-0,
+    weight: 900,
+    family: $font-heading,
+  ),
+  text-16: (
+    size: $font-16,
+    // 1rem
+    line: $line-160,
+    track: $tracking-0,
+    weight: 400,
+    family: $font-body,
+  ),
+  text-12: (
+    size: $font-12,
+    // 0.75rem
+    line: $line-130,
+    track: $tracking-092,
+    weight: 700,
+    family: $font-heading,
+  ),
+);
+
+@each $name, $settings in $typography {
+  .#{$name} {
+    font-size: map-get($settings, size);
+    font-family: map-get($settings, family);
+    line-height: map-get($settings, line);
+    letter-spacing: map-get($settings, track);
+    font-weight: map-get($settings, weight);
+  }
+}
