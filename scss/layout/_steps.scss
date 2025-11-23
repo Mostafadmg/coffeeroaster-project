@@ -5,7 +5,10 @@
   align-items: center;
   gap: $spacing-500;
   margin-bottom: $spacing-1200;
-  padding-inline: $spacing-1200;
+
+  @include desktop {
+    padding-inline: $spacing-1200;
+  }
 
   &__container {
     display: flex;
