@@ -74,3 +74,11 @@ $typography: (
     font-weight: map-get($settings, weight);
   }
 }
+
+.pb-s {
+  margin-bottom: 5rem;
+}
+
+.pb-m {
+  margin-bottom: 15rem;
+}

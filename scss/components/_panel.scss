@@ -1,0 +1,116 @@
+.panel-dark {
+  background-color: $neutral-900;
+  padding: $spacing-800 $spacing-200;
+  border-radius: 8px;
+  height: 33.0625rem;
+  margin: 0 auto;
+  width: 100%;
+
+  @include tablet {
+    height: 25.125rem;
+    flex-shrink: 0;
+  }
+
+  @include desktop {
+    max-width: 80rem;
+    height: 27.125rem;
+    flex-shrink: 0;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-500;
+  margin-bottom: $spacing-1200;
+  padding-inline: $spacing-300;
+
+  @include desktop {
+    padding-inline: $spacing-600;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-500;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-300;
+
+    @include tablet {
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex: 1;
+    }
+  }
+
+  &__label {
+    color: $neutral-500;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      text-align: left;
+      align-self: flex-start;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__number {
+    color: $orange-200;
+    text-align: center;
+    width: 2.55263rem;
+    height: 3.067rem;
+
+    @include tablet {
+      text-align: left;
+      line-height: 1;
+      margin-bottom: $spacing-300;
+    }
+  }
+
+  &__title {
+    color: $neutral-900;
+    text-align: center;
+    font-weight: 900;
+
+    @include tablet {
+      text-align: left;
+      min-height: 5rem;
+    }
+  }
+
+  &__text {
+    color: $neutral-900;
+    opacity: 0.9;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+}

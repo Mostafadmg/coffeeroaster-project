@@ -1,1 +1,137 @@
-// About page styles
+.about__hero {
+  padding: $spacing-600 0 $spacing-1800 0;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 12rem;
+  }
+
+  @include desktop {
+    padding-inline: $spacing-600;
+    gap: 7.8125rem;
+    margin-bottom: 0;
+  }
+}
+
+.commitment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-250;
+  padding-top: $spacing-600;
+  text-align: center;
+  max-width: 44rem;
+
+  @include tablet {
+    width: 60%;
+    padding-top: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+  &__title {
+    color: $neutral-900;
+  }
+
+  &__text {
+    color: $neutral-900;
+    opacity: 0.8;
+  }
+}
+
+.quality {
+  margin: 0 auto;
+  margin-bottom: $spacing-1000;
+  position: relative;
+  &__img {
+    width: 17.5rem;
+    height: 9.75rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: -9rem;
+    object-fit: contain;
+    position: relative;
+
+    // All images take full width
+    & img {
+      width: 100%;
+      display: none; // default hidden; we will show the right one
+    }
+
+    // MOBILE (default)
+    .quality__img--mobile {
+      display: block;
+    }
+
+    // TABLET
+    @include tablet {
+      width: 100%;
+      max-width: 35.8125rem;
+      height: 18.75rem;
+      flex-shrink: 0;
+      margin-top: -18rem;
+
+      .quality__img--mobile {
+        display: none;
+      }
+      .quality__img--tablet {
+        display: block;
+      }
+      .quality__img--desktop {
+        display: none;
+      }
+    }
+
+    // DESKTOP
+    @include desktop {
+      width: 27.8125rem;
+      height: 29.625rem;
+      flex-shrink: 0;
+      position: absolute;
+      right: 4rem;
+      bottom: 2rem;
+
+      .quality__img--mobile,
+      .quality__img--tablet {
+        display: none;
+      }
+
+      .quality__img--desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    color: #fefcf7;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-400;
+    text-align: center;
+    padding-top: $spacing-600;
+
+    @include desktop {
+      text-align: left;
+      max-width: 60%;
+    }
+  }
+
+  &__title {
+    @include mobile {
+      padding-inline: 5rem;
+    }
+  }
+  &__text {
+    opacity: 0.8;
+
+    @include mobile {
+      padding-inline: 5rem;
+    }
+  }
+}
