@@ -1,0 +1,128 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-500;
+  margin-bottom: $spacing-1200;
+  background-color: $neutral-900;
+  padding: $spacing-500 $spacing-500 $spacing-800 $spacing-500;
+
+  @include desktop {
+    padding-inline: $spacing-1200;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* TRACK: line + icons */
+  &__track {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    min-width: clamp(70%, 70vw, 73%);
+
+    @include tablet {
+      opacity: 1;
+      margin-bottom: 5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__track-line {
+    width: 100%;
+    height: 3px;
+    background-color: #fdd6ba;
+  }
+
+  &__track-icons {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+
+    svg:nth-child(1) {
+      transform: translateX(-50%);
+    }
+
+    svg:nth-child(3) {
+      transform: translateX(50%);
+    }
+
+    & svg {
+      display: block;
+      stroke-width: 2px;
+      stroke: var(--colors-teal-600, #0e8784);
+    }
+  }
+
+  /* CONTENT */
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-500;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-300;
+
+    @include tablet {
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex: 1;
+    }
+  }
+
+  &__number {
+    color: $orange-200;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+      line-height: 1;
+      margin-bottom: $spacing-300;
+    }
+  }
+
+  &__title {
+    color: $neutral-50;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+      min-height: 5rem;
+    }
+  }
+
+  &__description {
+    color: $neutral-50;
+    opacity: 0.9;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+}

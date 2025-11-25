@@ -220,8 +220,12 @@
 }
 
 // Plan page
-.header__hero.plan {
-  background-image: url("/starter-code/assets/plan/mobile/image-hero-plan.jpg");
+.header__hero.create {
+  background-image: url("/starter-code/assets/plan/mobile/image-hero-blackcup.jpg");
+
+  @include tablet {
+    background-image: url("/starter-code/assets/plan/desktop/image-hero-blackcup.jpg");
+  }
 }
 
 .header__hero.male-coffee {
