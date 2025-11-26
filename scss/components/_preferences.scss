@@ -1,0 +1,161 @@
+.preference {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-200;
+  justify-content: center;
+  align-items: flex-start;
+  margin-block: $spacing-800;
+  margin-inline: 0.75rem;
+
+  @include laptop {
+    justify-content: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: $spacing-300;
+    padding-bottom: $spacing-200;
+    border-bottom: 1px solid #83888f82;
+  }
+
+  &__number {
+    color: #83888f82;
+
+    &--active {
+      color: $teal-600;
+    }
+  }
+
+  &__item {
+    color: #83888f82;
+
+    &--active {
+      color: $neutral-900;
+    }
+  }
+}
+
+.question {
+  margin-bottom: $spacing-600;
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-400;
+  }
+
+  &__titlebox {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: $neutral-500;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 19px;
+    height: 12px;
+
+    :hover {
+      opacity: 0.6;
+    }
+
+    &-open-arrow,
+    &-close-arrow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &-open-arrow {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    &-close-arrow {
+      opacity: 0;
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+  }
+
+  &__item.active {
+    .question__icon-open-arrow {
+      opacity: 0;
+      transform: rotate(-180deg);
+    }
+    .question__icon-close-arrow {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-200;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s;
+
+  &.open {
+    opacity: 1;
+    max-height: 500px;
+    visibility: visible;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-200;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $spacing-250;
+    background-color: $neutral-100;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $teal-600;
+      color: white;
+    }
+
+    &.selected {
+      background-color: $teal-600;
+      color: white;
+    }
+  }
+
+  &__text {
+    text-align: left;
+  }
+}
+
+.plan {
+  @include laptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: $spacing-1600;
+    margin-top: $spacing-1600;
+  }
+}
