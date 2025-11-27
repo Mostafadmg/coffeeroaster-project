@@ -5,7 +5,7 @@
   padding: $spacing-200 $spacing-400;
   border-radius: 0.375rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: block;
   text-align: center;
 
@@ -16,11 +16,9 @@
 
   &:hover {
     background-color: $teal-300;
-    transform: translateY(-1px) scale(1.03);
   }
 
   &:active {
     background-color: $teal-600;
-    transform: translateY(0) scale(1.01);
   }
 }
