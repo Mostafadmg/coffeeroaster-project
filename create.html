@@ -73,6 +73,36 @@
       </div>
     </header>
     <main class="create">
+      <section class="popout">
+        <div class="modal">
+          <header class="modal__header">
+            <h1 class="modal__header__title text-32">Order Summary</h1>
+          </header>
+          <div class="modal__container">
+            <div class="modal__container__text">
+              <p class="modal__container__order text-18">
+                "I drink my coffee using
+                <span class="summary__drinkType summary-item">_____</span>, with a
+                <span class="summary__beanType summary-item">_____</span> type of bean.
+                <span class="summary__quantity summary-item">_____</span>, sent to me
+                <span class="summary__delivery summary-item">_____</span>."
+              </p>
+              <p class="modal__container__sub">
+                Is this correct? You can proceed to checkout or go back to plan selection
+                if something is off. Subscription discount codes can also be redeemed at
+                the checkout.
+              </p>
+            </div>
+            <div class="modal__footer">
+              <p class="modal__footer__price text-32">$14.00/ mo</p>
+              <button class="modal__footer__btn plan-btn text-16" id="checkout-btn">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="timeline">
         <div class="timeline__container">
           <div class="timeline__track">
@@ -174,7 +204,7 @@
           <!-- choice -->
           <!-- Question 1 -->
           <div class="question">
-            <div class="question__item" data-question="drink-type">
+            <div class="question__item" data-category="drinkType">
               <div class="question__titlebox">
                 <h1 class="question__title text text-32">
                   How do you drink your coffee?
@@ -234,7 +264,7 @@
           <!-- Question 2 -->
 
           <div class="question">
-            <div class="question__item" data-question="drink-type">
+            <div class="question__item" data-category="beanType">
               <div class="question__titlebox">
                 <h1 class="question__title text text-32">What type of coffee?</h1>
                 <div class="question__icon">
@@ -292,7 +322,7 @@
           <!-- question 3 -->
 
           <div class="question">
-            <div class="question__item" data-question="drink-type">
+            <div class="question__item" data-category="quantity">
               <div class="question__titlebox">
                 <h1 class="question__title text text-32">How much would you like?</h1>
                 <div class="question__icon">
@@ -349,7 +379,7 @@
 
           <!-- question 4 -->
           <div class="question">
-            <div class="question__item" data-question="drink-type">
+            <div class="question__item" data-category="grindOption">
               <div class="question__titlebox">
                 <h1 class="question__title text text-32">Want us to grind them?</h1>
                 <div class="question__icon">
@@ -407,7 +437,7 @@
           <!-- question 5 -->
 
           <div class="question">
-            <div class="question__item" data-question="drink-type">
+            <div class="question__item" data-category="delivery">
               <div class="question__titlebox">
                 <h1 class="question__title text text-32">How often should we deliver?</h1>
                 <div class="question__icon">
@@ -465,15 +495,18 @@
             <p class="orderSum__label text-16">Order summary</p>
 
             <h5 class="orderSum__text text-24">
-              “I drink my coffee using
-              <span class="summary__drinkType">_____</span>, with a
-              <span class="summary__beanType">_____</span> type of bean.
-              <span class="summary__quantity">_____</span>, sent to me
-              <span class="summary__delivery">_____</span>.”
+              "I drink my coffee using
+              <span class="summary__drinkType summary-item">_____</span>, with a
+              <span class="summary__beanType summary-item">_____</span> type of bean.
+              <span class="summary__quantity summary-item">_____</span>, sent to me
+              <span class="summary__delivery summary-item">_____</span>."
             </h5>
           </div>
 
-          <button class="plan-btn text-18">Create your plan</button>
+          <p class="error-message text-16" id="error-message">
+            Please answer all questions before creating your plan
+          </p>
+          <button class="plan-btn text-18" id="plan-btn">Create your plan</button>
         </div>
       </section>
 

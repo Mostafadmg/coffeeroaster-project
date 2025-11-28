@@ -19,11 +19,21 @@
     gap: $spacing-300;
     padding-bottom: $spacing-200;
     border-bottom: 1px solid #83888f82;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      .preference__number,
+      .preference__item {
+        color: $neutral-900;
+      }
+    }
   }
 
   &__number {
     color: #83888f82;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &--active {
       color: $teal-600;
@@ -32,7 +42,7 @@
 
   &__item {
     color: #83888f82;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &--active {
       color: $neutral-900;
@@ -62,7 +72,7 @@
     transition: all 0.2s;
 
     &:hover {
-      color: black;
+      color: $neutral-900;
     }
 
     @include tablet {
@@ -124,6 +134,14 @@
   overflow: hidden;
   transition: all 0.2s;
 
+  &__title {
+    color: $neutral-900;
+  }
+
+  &__text {
+    color: $neutral-900;
+    opacity: 0.9;
+  }
   &.open {
     opacity: 1;
     max-height: 500px;
@@ -144,17 +162,29 @@
 
     &--active {
       background-color: $teal-600;
-      color: white;
+
+      .answer__title,
+      .answer__text {
+        color: white;
+      }
     }
 
     &:hover {
       background-color: $teal-600;
-      color: white;
+
+      .answer__title,
+      .answer__text {
+        color: white;
+      }
     }
 
     &.selected {
       background-color: $teal-600;
-      color: white;
+
+      .answer__title,
+      .answer__text {
+        color: white;
+      }
     }
   }
 
@@ -207,6 +237,41 @@
   &__text {
     span {
       color: $teal-600;
+      transition: all 0.3 ease;
     }
+  }
+}
+
+.summary-update {
+  animation: fadeIn 0.35s ease;
+}
+
+.error-message {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: $spacing-200 $spacing-400;
+  border-radius: 0.5rem;
+  border: 2px solid #dc2626;
+  margin: 1rem 0;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &--show {
+    opacity: 1;
+    max-height: 100px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.4;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
