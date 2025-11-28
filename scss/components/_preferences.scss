@@ -134,6 +134,11 @@
   overflow: hidden;
   transition: all 0.2s;
 
+  @include tablet {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
   &__title {
     color: $neutral-900;
   }
